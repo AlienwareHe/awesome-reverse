@@ -43,6 +43,9 @@ Chrome作为JS逆向的核心工具，熟练掌握Chrome的控制台、插件编
 - Snippets代码片段
 - debugger 下断点，JS支持通过debugger();来下断点，例如可能会遇到一种反调试措施就是打开控制台时无限跳入debugger就是通过该方法。
 
+## 善用Network Filter功能
+![image](http://oss.alienhe.cn/20200916154510.png)
+除了通过正则表达式过滤请求之外，Chrome还支持属性搜索，例如通过cookie-name或cookie-value等进行搜索。
 
 ## Sources面板的breakpoint功能
 在Sources面板的右侧有非常实用的XHR BreakPoints和其他DOM元素、事件的断点功能，通过XHR断点可以快速在目标接口请求时debug住，然后通过调用栈回溯其中某个参数的生成逻辑。例如：
@@ -149,4 +152,5 @@ https://sspai.com/post/40485
     });
 })();
 ```
+
 # [实战案例-美团周边游景点详情页接口](/js/美团Touch周边游景点详情页接口破解.pdf)
