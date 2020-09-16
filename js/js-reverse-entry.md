@@ -46,6 +46,7 @@ Chrome作为JS逆向的核心工具，熟练掌握Chrome的控制台、插件编
 
 ## Sources面板的breakpoint功能
 在Sources面板的右侧有非常实用的XHR BreakPoints和其他DOM元素、事件的断点功能，通过XHR断点可以快速在目标接口请求时debug住，然后通过调用栈回溯其中某个参数的生成逻辑。例如：
+
 ![image](http://oss.alienhe.cn/20200916130010.png)
 
 ## DOM元素变更监听
@@ -53,6 +54,7 @@ Chrome作为JS逆向的核心工具，熟练掌握Chrome的控制台、插件编
 
 ## DOM元素事件绑定函数定位
 如果想要找到目标元素组件的点击事件所绑定的事件函数例如onClick函数，可以同样在Elements面板中找到对应元素后，在右边部分点击Event Listeners找到该元素绑定的所有事件。例如：
+
 ![image](http://oss.alienhe.cn/20200916115036.png)
 
 # JS注入及Hook
@@ -96,7 +98,7 @@ Object.defineProperty(document, 'cookie', {
 - [ReRes插件](https://github.com/annnhan/ReRes)重定向JS文件，将对方的html重定向至我们本地的修改后附带hook脚本的html
 - 油猴脚本的方式（推荐，最方便）
 
-后两种实际上都是通过Chrome插件的方式来完成JS注入，在熟练之后我们也可以自己编写Chrome插件工具来完成JS注入和Hook和加快分析速度。这里介绍一下油猴脚本的编写方式，使用方式可见：
+后两种实际上都是通过Chrome插件的方式来完成JS注入，在熟练之后我们也可以自己编写Chrome插件工具来完成JS注入和Hook和加快分析速度。这里介绍一下油猴脚本的编写方式，使用方式可参考：
 
 https://sspai.com/post/40485
 
