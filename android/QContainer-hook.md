@@ -73,5 +73,8 @@ CamelToolKit中对这几项属性进行了赋值，方便插件中使用，否�
 - void forbid(String path, boolean file); //设置某个路径为不存在
 - void readOnlyFile(String path); // 设置某个路径为只读文件
 
+## whiteSdcardDirPath
+由于QContainer对SD卡路径也做了IO重定向，所以使用时一定要注意避免在hook回调（前文说到的IO重定向的时机）中直接使用常规的/sdcard路径保存和读取，此时应该使用CamelToolKit#whiteSdcardDirPath白名单路径进行保存和读取。
+
 ## ICamelManagerSupport & ICamelSchedulerTaskHandler
 这两个类分别是Manager提供的辅助功能以及定时任务相关API，目前仅提供了切换小米机型的飞行模式功能，待后续需求需要定制扩展。
