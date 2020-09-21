@@ -1,11 +1,11 @@
 # 目录
 
 * [简介](README.md)
-* [工具环境]()
-* [JS逆向]()
-    * [PC/H5]()
+* [工具环境](/base/tools-and-environment.md)
+* JS逆向
+    * PC/H5
         * [未混淆的JS调试和算法还原](/js/js-reverse-entry.md)
-        * [Node环境模拟执行JS]()
+        * Node环境模拟执行JS
             * [浏览器环境补齐](/js/browser-env-fix.md)
             * [JDK中V8引擎和Nashorn引擎使用](/js/jvm-js-execute-engine.md)
         * [OB混淆的AST还原]()
@@ -17,10 +17,11 @@
         * [小程序反编译及代码修复]()
         * [渲染层和逻辑层的两种Hook方式]()
         * [小程序网络请求Hook]()
-* [安卓逆向入门]()
-    * [安卓基础知识]()
-    * [Xposed Hook入门]()
-    * [QContainer中的Hook]()
+* 安卓逆向入门
+    * [安卓基础知识](/android/android-base-knowledge.md)
+    * [Xposed Hook入门](/android/xposed-hook-simple.md)
+    * [关键代码定位技巧](/android/keycode-locate-tips.md)
+    * [QContainer中的Hook](/android/QContainer-hook.md)
     * [QContainer项目解析]()
         * [重打包机制及签名校验绕过]()
         * [IO重定向的实战应用]()
