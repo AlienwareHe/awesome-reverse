@@ -35,6 +35,7 @@ dependencies {
 - src/main/assets文件下配置xposed_init文件，标识插件IRposedHookLoadPackage接口实现类，值得注意的是，handleLoadPackage方法执行时QContainer还未开始设备指纹分身和模拟，因此如果想要获取真实设备信息可在该方法中获取，定时任务自动调度也是同理。
 - （可选）src/main/assets文件下配置camel_scheduler.json文件，标识插件接入QC自动调度框架，并配置CamelTask接口实现类。
 - （可选）配置热发插件更新地址
+
 ```
 <!--是否是一个热发插件-->
 <meta-data android:name="isHotModule" android:value="true" />
