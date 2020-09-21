@@ -1,0 +1,19 @@
+Hook技术是安卓逆向中最最常用和有效的破解方式，通过Hook可以拦截任意Java方法的调用进而实现参数修改、方法替换、返回值替换、堆栈打印等一系列辅助操作。Xposed框架则是安卓Hook中最出名的Hook框架，通过Xposed理论上可以hook到设备上任意一个进程包括系统进程。
+
+PS：Xposed到7.1之后便不再维护，因此8.0+可使用EdXposed替代。顺便一提，EdXposed在实现上集成了市面众多经典框架，非常值得一学，例如Java层Hook上采用了SandHook和YAHFA，native hook上使用 Whale，通过Riru注入zygote进程，Magisk获取root权限。
+
+# Xposed框架结构 
+- XposedInstaller,负责管理Xposed插件的启用状态及Xposed状态
+- Xposed，xposed版的app_process，xposed实现的根本原因
+- XposedBridge，Xposed相关API，通过在zygote进程加载能够在任何APP中引用。
+
+这里简单的介绍以下Xposed的原理，通过安卓系统的开机流程，可以知道安卓中所有的APP都是由Zygote进程fork而得，因此若能够自定义Zygote进程我们就可以实现控制和注入所有的APP进程，通过init.rc文件中可以得知Zygote进程对应的可执行文件是app_process，Xposed正是通过自实现了各个版本操作系统的app_process文件，然后通过recovery模式将这些文件刷入完成替换。这里也可以看出Xposed与QContainer或者其他进程内注入Hook框架的区别，Xposed时机更早且QContainer无法完成系统进程的Hook。
+
+# Xposed插件编写
+编写Hook插件类似于异步编程，hook方法的代码顺序编写，但hook方法中的callback执行时机未，并且只有当APP执行时才会触发callback。
+具体的Xposed API用法很简单，网上或者源码里都可看到，这里仅描述Xposed的一些隐藏技巧和用法。
+
+# Xposed使用技巧
+- Native Hook（进阶，暂时用不上）
+- 遍历所有已加载Class，原理就是通过hook ClassLoader#loadClass方法，搜集所有classLoader，安卓中ClassLoader实现与JVM有所不同，在BaseDexClassLoader中有一个字段保存着当前classLoader加载的dexFile集合，叫做dexPathList，该字段的类型为[java/dalvik/system/DexPathList.java](https://www.androidos.net.cn/android/9.0.0_r8/xref/libcore/dalvik/src/main/java/dalvik/system/DexPathList.java)，可以看到该类中有一个dexElements数组，元素类型为DexFile，对应的native层数据结构就是脱壳寻找的关键目标。这里找到dexElements数组仅仅是为了遍历DexFile，然后通过DexFile#entries()获取DexFile中所有类集合。
+- 动态加载ClassLoader或加固APP的Hook，上述说了对于ClassLoader的hook技巧，实际上在实战中，如果碰到了加固的APP或者动态加载时，可能会出现我们使用应用本身的classloader去hook时无法找到对应的class，这时就可以通过该技巧去找到真正加载该类的的classLoader进行hook。
