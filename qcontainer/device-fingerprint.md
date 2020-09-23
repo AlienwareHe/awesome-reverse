@@ -32,6 +32,7 @@ https://blog.51cto.com/12755572/2049360
 
 # 二、APP主动式设备指纹
 下述已勾选的选项为QContainer已模拟的信息，具体源码可查看QContainer项目com.camel.runtime.fingerprint.VirtualFingerPrintController#build入口，为了使各项设备指纹模拟做到可插拔和扩展，采用的是类似工厂模式的设计，每项均对应一个Processor，方便后续维护。
+
 ![image](http://oss.alienhe.cn/20200923145928.png)
 
 PS：QContainer目前的设备指纹模拟宗旨是在同一个机型中做尽可能合理的范围随机波动，例如不修改机型信息、基站仅在周围小区间跳动等。因此可能会导致存在若对机型通杀时，无论如何新机都无法洗白的问题，此时可以尝试修改机型或修改更多信息。
