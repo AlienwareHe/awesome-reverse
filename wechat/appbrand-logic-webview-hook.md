@@ -48,7 +48,7 @@ RposedHelpers.findAndHookMethod("com.tencent.xweb.WebView", SharedObject.loadPac
 ![image](https://res.wx.qq.com/wxdoc/dist/assets/img/api-login.2fcc9f35.jpg)
 
 只要我们能拿到真实环境中的wx.login所返回的cod，就可以在开发者工具中修改登录的代码，将wx.login注释，替换成我们的code，这样就可以完成开发者 工具中 的登录啦，因此我们可以在渲染层注入我们的js代码，来主动调用wx.login，获取登录cod，例如：
-``
+```
                 // 在每个页面初始化完成之后注入
                 RposedBridge.hookMethod(onPageFinishedMethod, new RC_MethodHook() {
                     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
