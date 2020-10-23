@@ -59,9 +59,6 @@ PS：QContainer目前的设备指纹模拟宗旨是在同一个机型中做尽�
 ![](https://tva1.sinaimg.cn/large/0082zybply1gc8o0hqg3qj30kf0d1jsp.jpg) 
 
 ![](https://tva1.sinaimg.cn/large/0082zybply1gc8oq5tmo9j30jh0e1tex.jpg)
-* [x] 各种时间，由于是毫秒值，只要碰撞都可以被关联增加权值，包括系统开机时间(区分java层和Linux内核层)，app安装时间（包括base.apk的最后修改时间和packageManager的调用结果），其他app的安装时间（比如微信的安装时间），相册文件时间(正常人相册一定有内容且相册前几张照片几乎不会被删除)
-* [x] 各种大小，由于同一个批次的手机的各种硬件有细微差异，所以大小也可以作为设备指纹标记。sdcard磁盘大小android.system.StructStatVfs
-* [x] 内存空间大小 （包括ActivityManager.MemoryInfo,和linux层 /proc/meminfo）
 * [x] Linux内核相关的文件,如bootid(每次开机都会产生的一个唯一ID,/proc/sys/kernel/random/boot_id"),/proc/sys/kernel/osrelease,老版本的Android还有sdcard对应的设备句柄：/sys/block/mmcblk0/device/cid 各种网卡描述文件: /sys/class/net/eth0/address /sys/class/net/eth1/address /sys/class/net/wlan0/address /sys/class/net/wifi/address
 * [x] 手机序列号 不同版本的Android序列号获取姿势不一样，考虑多种版本的序列号拦截方案
 * app矩阵，也即多个app相互开放接口通信，实现设备号交换。
@@ -71,5 +68,3 @@ PS：QContainer目前的设备指纹模拟宗旨是在同一个机型中做尽�
     交互方式，包括文件权限(chmod 777),contentProvider,IPC，本地socket等
 * Android官方的accountManager，可以存储账号数据，如系统邮件账号
 * 命令行绕过，如linux命令,echo "the_id" > /sdcard/m_id   重启后 :cat /sdcard/m_id
-* 命令行IPC调用，adb shell service  call  https://blog.csdn.net/u014711665/article/details/91875959
-* ip link
