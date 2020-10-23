@@ -3,8 +3,3 @@
 
 # [目录](/SUMMARY.md)
 /SUMMARY.md
-
-
-
-
-PS：QContainer中使用了部分泄漏的VA商业版代码，因此可能需要注意保密QContainer代码。

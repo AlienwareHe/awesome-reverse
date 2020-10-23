@@ -102,6 +102,3 @@ Xpatch使用的则是第二种方法，dex2jar工具的大致原理是先根据d
 Xpatch在dex2jar的基础上修改了代码，在反编译成jar时增加一段用于在Application静态代码块中增加XposedModuleEntry.init()。
 
 但这种方式效率较低，需要反编译所有DEX，因此QContainer采用了baksmali库即第一种方式，只需反编译出目标APK的Application对应的smali文件，然后插入预先编译好的smali静态代码块再回编到dex中完成smali替换操作，在查找smali文件时需要注意可能存在多层父类的情况，需要递归向上查找最上层父类进行插入。
-
-# 参考
-[Xpatch原理解析](https://bbs.pediy.com/thread-253484.htm)
