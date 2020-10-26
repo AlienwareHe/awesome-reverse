@@ -16,12 +16,12 @@ Node环境和浏览器环境最大的区别在于DOM操作渲染和浏览器提�
 第三步则是用于我们线上的生产操作，原理就是NodeJS基于V8引擎，因此理论上Node中可以执行的，在Java中也可以调用V8引擎或其他的JS执行引擎例如JDK8后自带的Nashorn引擎来达到同样的效果，在[JVM中的JS执行引擎](/js/jvm-js-execute-engine.md)可以这两者的使用方法和区别以及注意事项。
 
 
-# 携程eleven参数环境实战
-携程eleven参数的生成算法采用了携程自研的混淆算法，基本不可能被还原，只能通过调试来观察其中的状态机和摸清执行流程，下面会给出携程eleven生成算法还原时用到的浏览器环境对象。（也可以使用rpc的方式直接调用，非常简单）
+# Ctrip eleven参数环境实战
+Ctrip eleven参数的生成算法采用了Ctrip 自研的混淆算法，基本不可能被还原，只能通过调试来观察其中的状态机和摸清执行流程，下面会给出Ctrip eleven生成算法还原时用到的浏览器环境对象。（也可以使用rpc的方式直接调用，非常简单）
 
-![携程eleven参数中需要补齐的浏览器环境](http://oss.alienhe.cn/20200915204203.png)
+![Ctrip eleven参数中需要补齐的浏览器环境](http://oss.alienhe.cn/20200915204203.png)
 
-上面的脑图中是在还原携程eleven参数时所需要补齐的浏览器环境，其中有几项是较为偏僻的反爬措施。
+上面的脑图中是在还原Ctrip eleven参数时所需要补齐的浏览器环境，其中有几项是较为偏僻的反爬措施。
 
 下面就列举了需要额外注意的几个地方：
 # dom操作
@@ -46,7 +46,7 @@ String.prototype.indexOf = function (searchValue, fromIndex) {
 ```
 
 # native方法检测
-在JS中存在许多native方法，其中某些方法也是node环境中所不存在需要模拟的，针对这类方法，携程可以通过打印该方法判断该方法是否被重写，因此绕过方式也是重写Function的toString方法：
+在JS中存在许多native方法，其中某些方法也是node环境中所不存在需要模拟的，针对这类方法，Ctrip 可以通过打印该方法判断该方法是否被重写，因此绕过方式也是重写Function的toString方法：
 ```
     var originString = Function.prototype.toString;
     // native方法检测
@@ -68,7 +68,7 @@ canvas指纹是浏览器指纹中绕不开的存在，通过不同设备绘制�
 4. 同一个条件的canvas多次绘制时应该保持一致
 
 # 自动化痕迹检测
-自动化痕迹虽然不是node环境补齐浏览器环境需要考虑的东西，但在携程的反爬JS中也是可以看到二十多项检测自动化属性的地方，因此自动化痕迹也是前端所需要知悉的一个对抗点。
+自动化痕迹虽然不是node环境补齐浏览器环境需要考虑的东西，但在Ctrip 的反爬JS中也是可以看到二十多项检测自动化属性的地方，因此自动化痕迹也是前端所需要知悉的一个对抗点。
 
 目前已知的较为完美绕过自动化框架检测的一个办法是使用无头chrome浏览器或jvppeteer：
 
@@ -77,7 +77,7 @@ https://intoli.com/blog/not-possible-to-block-chrome-headless/
 https://github.com/fanyong920/jvppeteer
 
 # 浏览器指纹
-通过携程的反爬JS也可以看出来携程在JS中搜集的浏览器指纹，虽然在浏览器中获取指纹其实并不可靠，获取的信息也并不权威。
+通过Ctrip 的反爬JS也可以看出来Ctrip 在JS中搜集的浏览器指纹，虽然在浏览器中获取指纹其实并不可靠，获取的信息也并不权威。
 
 常见的浏览器指纹信息：
 * window.screen 屏幕分辨率/宽高

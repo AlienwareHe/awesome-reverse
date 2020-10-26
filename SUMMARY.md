@@ -31,7 +31,7 @@
     * [基于Hook的自动化点击框架](/android/xposed-appium.md)
     * [APP接口暴露式RPC调用](/android/hook-rpc.md)
     * [APP的全协议还原过程的抽丝剥茧](/android/crack-mt-tcp.md)
-    * [基于Hook的携程美团TCP请求抓包](/android/mt-ctrip-hook-capture.md)
+    * [基于Hook的MT和Ctrip的TCP请求抓包](/android/mt-ctrip-hook-capture.md)
 * 安卓逆向进阶
     * [基于FRIDA分析逆向APP](/frida/frida-docs.md)
     * [安卓加固历代壳发展及对应脱壳技术](/android/apk-unpack.md)

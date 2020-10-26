@@ -1,42 +1,4 @@
 # 逆向入门工具及环境搭建
-## 工程项目介绍
-- [ratel-qunar-crack](http://gitlab.corp.qunar.com/kykm/ratel-qunar-crack)
-- [QContainer](http://gitlab.corp.qunar.com/kykm/QContainer)
-- [protocol-crack](http://gitlab.corp.qunar.com/kykm/protocol-crack)
-- [magic-service](http://gitlab.corp.qunar.com/kykm/magic-service)
-- [g4proxy](http://gitlab.corp.qunar.com/kykm/g4proxy)
-
-## ratel-qunar-crack
-所有基于平头哥或QContainer容器的hook插件代码仓库，其中每个module为一个插件，若为QContainer插件则以-camel后缀进行标识。
-
-**更多详细信息请参考参考项目下README.md！！**
-
-这里介绍几个重要的规范和开发技巧：
-- 插件开发最终产物为插件APK，不需要线上发布，但每次需求迭代时需要更新build.gradle下的versionName和versionCode，并记录每次版本更新内容，例如:
-
-![image](http://oss.alienhe.cn/20200917185241.png)
-
-- 新建插件module，项目下有一个脚本template.sh可以快速新建一个插件module，但是目前仍为平头哥插件模版，对应crack-demo工程，后续可以更新成QC插件模版，具体使用方式参考项目README。
-- 自动点击插件典型DEMO：crack-ctrip-superappium-camel
-- Sekiro RPC插件典型DEMO：crack-meituan-hermes
-- Go RPC插件典型DEMO：crack-ctrip-rpc
-- Hook插件典型DEMO：crack-ctrip
-- 系统通知栏监听小APP：detect-my-phone
-
-## protocol-crack & magic-service
-这俩工程都是全协议抓取模式的工程，通过纯服务器进行抓取，两者的区别在于protocol-crack早期是为了美团APP全协议创建以及为其他APP全协议做准备，目前所支持的协议已有：
-- 美团APP
-- 艺龙酒店Touch及验证码登录协议
-- 携程PC酒店（eleven参数）
-- 携程Touch酒店（crawlerKey参数）
-- 携程门票搬单链路
-- 携程登录协议（短信验证码、登录、滑块）
-
-## g4proxy
-该工程为一个安卓APP工程，主要作用为：
-1. slave信息上报
-2. 4G代理agent
-该APP作为4G代理的原理与Sekiro RPC的方式类似，均为通过一个Netty TCP长链接作为内网穿透和请求转发通道。
 
 ## JS逆向工具链
 - Chrome
@@ -68,7 +30,7 @@
 
 对于大APP或者需要经常分析源码的，还是建议使用命令行反编译，并加上--no-imports参数，取消import导入，因为混淆后的APP代码中充斥大量A、B、C类，使用全限定名利于分辨，然后在android studio中进行打开，在交叉引用等分析上会方便很多。
 
-在使用命令行反编译时，大型APK时需要较大内存例如美团，可能会出现不断陷入GC的情况导致反编译卡死，一个解决方案是更改JADX配置调整内存，另一个则是对APP中的每个DEX分开编译然后合并至一起（适用于16G小内存电脑，通用方案）。这里给出自己写的一个自动Shell脚本，主要功能为：
+在使用命令行反编译时，大型APK时需要较大内存例如MT/Wexin，可能会出现不断陷入GC的情况导致反编译卡死，一个解决方案是更改JADX配置调整内存，另一个则是对APP中的每个DEX分开编译然后合并至一起（适用于16G小内存电脑，通用方案）。这里给出自己写的一个自动Shell脚本，主要功能为：
 - smali代码反编译
 - java代码反编译
 - 分DEX编译

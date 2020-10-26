@@ -44,7 +44,7 @@ XposedBridge.hookAllConstructors(XposedHelpers.findClass("com.sankuai.meituan.re
     }
 ```
 
-## 3.携程Hook抓包
+## 3.Ctrip Hook抓包
 ```
 // 请求
 RposedBridge.hookAllMethods(RposedHelpers.findClass("ctrip.business.comm.ProcoltolHandle",

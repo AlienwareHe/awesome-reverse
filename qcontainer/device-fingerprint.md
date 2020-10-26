@@ -50,7 +50,7 @@ PS：QContainer目前的设备指纹模拟宗旨是在同一个机型中做尽�
 * [x] 系统信息（build.prop）
 * [x] 屏幕亮度
 * [x] 电池电量&充电状态
-* 美团APP矩阵（ContentProvider）
+* APP矩阵（ContentProvider）
 * [x] 开机时间 &  APP安装时间
 * [x] VPN检测，包括connectivityManager NetworkCapabilities的和NetworkInterface tun0 pptp0和Linux文件/sys/class/net/tun0
 * 存储空间泄漏： sdcard交换文件（见app矩阵联盟），sdcard存储id,内部文件修改权限为777(低版本手机SeLinux没有限制)

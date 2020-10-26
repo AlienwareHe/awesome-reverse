@@ -99,7 +99,7 @@ M-SHARK-TRACEID生成算法：
  	3.com.meituan.android.common.utils.mtguard.network.BaseReporter.report(BaseReporter.java:85)
 
 
-美团retrofit请求响应流程：
+MT retrofit请求响应流程：
 	1. ClientCall enqueue or execute
 	2. com.sankuai.meituan.retrofit2.ClientCall.this.parseResponse(com.sankuai.meituan.retrofit2.ClientCall.this.getResponseWithInterceptorChain(access$100.newBuilder().addHeader("retrofit_exec_time", java.lang.String.valueOf(currentTimeMillis)).build()))
 	3. 之后经过一系列拦截器链，这里关键的拦截器为BridgeInterceptor，用于将响应数据GZIP解压
