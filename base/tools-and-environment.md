@@ -6,16 +6,16 @@
 - Chrales/Fiddler 用于PC和APP的抓包
 - 油猴插件 用于JS Hook
 - Node环境
-- [WxAppUnpacker](https://github.com/xuedingmiaojun/wxappUnpacker) 小程序包反编译工具
+- 小程序包反编译工具:[WxAppUnpacker](https://github.com/xuedingmiaojun/wxappUnpacker)
 
 ## 安卓逆向工具链
-这里只介绍工作中会用到的一些工具和开发环境，基于这些也足以应付大部分安卓逆向。
+这里列举一些日常中经常使用到的一些工具和开发环境，基于这些也足以应付大部分安卓APP的逆向。
 ### 反编译
 - （推荐）[JADX](https://github.com/skylot/jadx)：开源、稳定、有GUI界面
 - apktool 常用于反编译smali代码
-- JEB
+- JEB 在反编译算法上弥补JADX部分代码无法还原的情况，例如多层try-catch嵌套
 - IDA Pro（一般用于调试SO文件）
-- 010 Editor（查看二进制文件，查看ELF/Dex文件格式、AndroidManifest.xml文件反编译失败时可以用上）
+- 010 Editor（查看二进制文件，查看ELF/Dex文件格式、或者在AndroidManifest.xml文件反编译失败时可以用上）
 - HttpCanary 基于VPN的抓包APP
 - MT管理器 安卓上一款功能丰富包括APK反编译、DEX重构等功能的文件管理APP
 - file\objdump等Linux命令 （PS.不要相信文件后缀名，要基于文件特征多维度校验）
@@ -24,6 +24,19 @@
 - android studio
 - android sdk/ndk
 - gradle 安卓中全部使用gradle而非maven构建项目
+
+### Hook工具
+APP逆向中离不开的核心思想：hook，可以实现代码动态插桩，修改对方APP中的方法执行逻辑，这里列举几种可以装上即用的Hook工具。
+
+Hook框架|是否需要root环境｜hook范围｜支持安卓版本
+---|---|---|---
+Xposed｜
+EdXposed｜
+VAXposed｜
+Frida｜
+太极｜
+Ratel｜
+QContainer
 
 ### JADX使用技巧
 对于小APP，可以直接直接拖拽源APK进JADX-GUI，快速得到反编译结果。
@@ -34,6 +47,8 @@
 - smali代码反编译
 - java代码反编译
 - 分DEX编译
+
+> 详细介绍见：https://github.com/AlienwareHe/multi-dex-jadx
 
 ```
 #!/bin/bash
