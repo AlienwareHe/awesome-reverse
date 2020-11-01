@@ -45,11 +45,11 @@
 
 作者故事星球：
 
-![一起来讨论交流学习吧，逆向人！](/星球-六七七.jpeg)
+![一起来讨论交流学习吧，逆向人！](/assets/677.jpeg)
 
 如果你觉得对你有帮助，或者你开心的话，可以请作者喝一杯咖啡：
 
-![image](http://oss.alienhe.cn/wx_zanshangma.jpeg)    ![image](http://oss.alienhe.cn/zhifubao_zanshangma.jpeg)
+![image](/assets/wx.jpeg)![image](/assets/zfb.jpeg)
 
 # 致谢
 感谢所学到的所有逆向前辈！
