@@ -37,7 +37,7 @@ void FingerPrintFaker::hook_shell_exec() {
 
 但是在实际使用上，需要注意Inline hook的限制，因为inline hook原理是通过修改目标方法的汇编指令的开始处的几个字节的代码（Substrate中为12个字节），用一段跳转指令来完成目标方法的hook替换，因此inline  hook的最大缺点为需要目标方法足够大，否则会导致替换跳板指令后后续指令紊乱。
 
-如果遇到这种情况，可以将目标SO拉到本地，使用IDA打开，找到目标函数判断目标函数指令长度是否过短，通常出现在系统函数上，例如__system_property_get在安卓9.0后的优化，如果在4字节之上，可以考虑使用SandHook的异常Hook，否则只能使用GOT表Hook例如XHook（目前QC尚未引入Xhook）。
+如果遇到这种情况，可以将目标SO拉到本地，使用IDA打开，找到目标函数判断目标函数指令长度是否过短，通常出现在系统函数上，例如__system_property_get在安卓9.0后的优化，如果在4字节之上，可以考虑使用**SandHook的异常Hook**，否则只能使用GOT表Hook例如XHook。
 
 # SandHook 异常Hook
 来看一下异常Hook的用法，与Substrate十分类似，不同的地方在于原函数指针通过返回值获取，需要自行强转。

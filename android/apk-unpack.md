@@ -10,7 +10,7 @@
 # 一代：整体Dex加固
 初代壳的核心原理就是 DEX 整体加密然后动态加载，也有人具体划分为落地壳和不落地加载壳，两者的区别仅在于解密后的DEX是否持久化到本地，对于落地壳来说就是需要先解密文件，然后写入到另外一个文件当中，然后再调用 DexClassLoader 或者其他加载函数来加载解密后的文件，对于不落地壳来说则是直接在内存中解密内存中加载，对于加固方可能是个技术迭代，但对于脱壳方来说，都可以通过一种方法来解决即DEX DUMP。
 
-早先的脱壳技术中主要是通过动态分析调试来进行脱壳，例如通过IDA断点调试然后DUMP内存的方案（现在可以用Frida内存漫游进行DUMP，比如葫芦娃的[Frida-DexDump](https://github.com/hluwa/FRIDA-DEXDump)），DUMP内存的方式一种是通过Hook某个加载DexFile的函数（不同安卓版本可能不同）获得DexFile结构体的内存起始地址和大小，另一种则是内存中搜索Dex文件的magic魔数，找到内存起始地址，然后根据Dex文件格式获取Dex文件大小，后来也有些加固为了对抗这种方式会将DEX魔数抹去。
+早先的脱壳技术中主要是通过动态分析调试来进行脱壳，例如通过IDA断点调试然后DUMP内存的方案（现在可以用Frida内存漫游进行DUMP，比如葫芦娃大佬的[Frida-DexDump](https://github.com/hluwa/FRIDA-DEXDump)），DUMP内存的方式一种是通过Hook某个加载DexFile的函数（不同安卓版本可能不同）获得DexFile结构体的内存起始地址和大小，另一种则是内存中搜索Dex文件的magic魔数，找到内存起始地址，然后根据Dex文件格式获取Dex文件大小，后来也有些加固为了对抗这种方式会将DEX魔数抹去。
 
 可以看出这种加固和脱壳方式的粒度都是Dex级别，而且代码数据总是结构完整的存储在一段内存里面，这是一个致命的弱点，一旦反注入、反调试等措施被破解，这个保护就相当于是已经失败了。
 
@@ -38,3 +38,11 @@
 
 # 脱壳时机和脱壳点
 可以发现，编写一个脱壳机有两个非常重要的因素，脱壳点和脱壳时机，脱壳点决定了如何获得Dex文件在内存中的位置，脱壳时机则是反应了能否获取到原始的真正的Dex文件。ART下影响脱壳的关键的一个类就是DexFile，那么我们便可以围绕这个类，实现在Android庞大的系统源码中快速定位脱壳点，从而能够找到“海量”的脱壳点。更具体可仔细阅读看雪中hanbingle讲师的相关帖子。
+
+# 参考&推荐
+- https://bbs.pediy.com/thread-254555.htm
+- https://bbs.pediy.com/thread-254028.htm
+- https://bbs.pediy.com/thread-252630.htm
+- https://bbs.pediy.com/thread-257829.htm
+- https://bbs.pediy.com/thread-257101.htm
+- https://mp.weixin.qq.com/s/DkpQ_71Gt-jkwOuRU1Mv0A

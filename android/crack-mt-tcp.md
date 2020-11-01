@@ -1,3 +1,5 @@
+PS: 随笔简记，仅为思路
+
 ## 全协议追踪分析
 请求数据加密方法：
 com.dianping.nvnetwork.tunnel.tool.c#b

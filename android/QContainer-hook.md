@@ -1,5 +1,7 @@
 # QContainer中的Hook
-QContainer所实现的是一个在免Root环境下完成类Xposed Hook的安卓应用分身框架，Hook功能基于SandHook和Substrate完成。
+QContainer所实现的是一个在免Root环境下完成类Xposed Hook的安卓**应用分身**和**设备指纹**框架，目前能够绕过数美的设备指纹风控，在插件编写方式上与Xposed基本一致，并且如果你需要，可以支持Native Hook。
+
+如果你对QContainer感兴趣，可以与我一起探讨。
 
 对于只是想完成一个Hook插件的功能，在使用方式上，原生Xposed与QContainer几乎没有差别，但仍有一些实现原理上导致的细节差异：
 - Hook API名称不同，QContainer为Rposed相关，主要是为了防止APP检测Xposed痕迹

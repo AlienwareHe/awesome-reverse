@@ -1,6 +1,6 @@
-本篇主要介绍QContainer中的第一步感染操作以及解释感染后的APK是如何在免root情况下具备xposed一般的hook能力。感染这词源于平头哥中的概念名词，实际上所做的事情就是对目标APK进行定制修改、注入、重打包的一系列流程，目标就是为了将QContainer中的所有能力诸如免Root Hook插件、应用分身等赋予给目标APK。
+本篇主要介绍如何进行重打包注入代码，以及重打包后如何绕过大多数的签名校验。
 
-对于想要在免Root设备上实现一个root，一般只有两种方式：
+对于想要在免Root设备上实现一个代码注入，一般有两种方式：
 - 类似VirtualApp的沙盒环境，由于VA对APP运行时使用到的系统组件都进行了动态代理，所以APP相当于运行在VA中，VA具有上帝视角和权利。
 - 进程内注入机制例如重打包，如Xpatch、太极
 
@@ -11,16 +11,18 @@ QContainer采用的机制就是重打包机制，重打包是指通过修改对�
 - android.content.pm.IPackageManager$Stub$Proxy#getPackageInfo
 - android.webkit.IWebViewUpdateService$Stub$Proxy#waitForAndGetProvider
 
-具体代码可参考QC中SignatureFixer做法。
+具体如何进行绕过，可以参考VirtualApp的做法：https://github.com/asLody/VirtualApp/blob/1fdc070f4be8be7272725807b60235beaf2a5717/VirtualApp/lib/src/main/java/com/lody/virtual/server/pm/parser/PackageParserEx.java
 
-除了签名校验，重打包的痕迹还有很多很多，例如通过applicationInfo.sourceDir等获取APK包文件(/data/app下)进行校验，或者检验/proc/self/maps中特征，以及很多QC没有绕过的未知的二次打包校验逻辑。
+但是，这种方式只能绕过一般的签名校验，如果对方校验文件哈希等与文件有关的操作，那么重打包的痕迹将会立马被发现，因此最好可以通过IO重定向的方式，将base.apk重定向到一个原始未修改过的APK文件，如此一来，对方通过文件进行签名校验便可完美绕过。具体IO重定向的方式可参考VirtualApp中做法。
 
 # 重打包机制
 Xposed是通过修改Zygote进程，然后在zygote进程中hook ActivityThread#handleBindApplication来在APP进程初始化之前执行hook代码来完成hook操作，该方法的主要功能就是创建Application，并调用其attachBaseContext、onCreate等方法，因此，在Application创建之前就实现Xposed Hook。那重打包应该在哪插入代码才能获取比应用启动更早的时机呢？
 
-这里有两种方案，每种方案都有自己适用的场景，原理都是基于安卓中默认入口为Application，只不过一个为替换，一个为插入。
+Xpatch中也有提到，这里有两种方案，每种方案都有自己适用的场景，原理都是基于安卓中默认入口为Application，只不过一个为替换，一个为插入。
 - AndroidManifest.xml中Application入口替换，这种方式的优势在于未修改原application，且适用于目标APP未集成Application重写的情况，但是容易通过入口堆栈检测发现痕迹
 - application实现类中插入静态代码块，这种方式的优势在于无入口堆栈检测痕迹，但是存在文件修改痕迹。
+
+两种方案各有千秋，各有各的适用场景，因此实际情况中某种方案失败，可以尝试另一种情况。
 
 ## application实现类中插入静态代码块
 Xposed插件加载时会使用到Context参数，而在静态代码块中，应用Context尚未创建，此时我们应如何获取Context？
@@ -102,3 +104,7 @@ Xpatch使用的则是第二种方法，dex2jar工具的大致原理是先根据d
 Xpatch在dex2jar的基础上修改了代码，在反编译成jar时增加一段用于在Application静态代码块中增加XposedModuleEntry.init()。
 
 但这种方式效率较低，需要反编译所有DEX，因此QContainer采用了baksmali库即第一种方式，只需反编译出目标APK的Application对应的smali文件，然后插入预先编译好的smali静态代码块再回编到dex中完成smali替换操作，在查找smali文件时需要注意可能存在多层父类的情况，需要递归向上查找最上层父类进行插入。
+
+## 致谢
+- Xpatch
+- Virjar
