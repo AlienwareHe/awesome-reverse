@@ -49,7 +49,8 @@
 
 如果你觉得对你有帮助，或者你开心的话，可以请作者喝一杯咖啡：
 
-![image](/assets/wx.jpeg)![image](/assets/zfb.jpeg)
+![wx](/assets/wx.jpeg)
+![zfb](/assets/zfb.jpeg)
 
 # 致谢
 感谢所学到的所有逆向前辈！
