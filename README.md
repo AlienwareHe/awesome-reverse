@@ -1,3 +1,5 @@
+![image](https://socialify.git.ci/AlienwareHe/awesome-reverse/image?description=1&font=Inter&owner=1&pattern=Floating%20Cogs&theme=Light)
+
 # 简介
 主要总结个人学习逆向相关所遇到的一些技术知识点和路径，因为逆向这个技术栈没有系统的规划路径，所以想要将工作中所遇到的和面试到的一些相关知识总结，面向逆向新人提供一些微薄的帮助。
 
