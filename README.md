@@ -37,7 +37,9 @@
     * [基于FRIDA分析逆向APP](/frida/frida-docs.md)
     * [安卓加固历代壳发展及对应脱壳技术](/android/apk-unpack.md)
     * [ARM常用指令及参数调用约定](/so/arm-registers.md)
+    * [riru原理浅析及Edxp入口分析](/android/riru-edxp.md)
     * [IDA Pro常用分析手法-待续]()
+    * [面试必问系列：安卓系统开机流程](/android/android-system-start.md)
 
 # 交流
 作者微信：hx58929
