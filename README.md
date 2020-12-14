@@ -9,6 +9,7 @@
 * 每日一个IDA小知识系列
   * [IDA符号和栈帧](/so/ida/每天一个IDA小技巧（一）序言--水印.pdf)
   * [代码和数据字节的基本转换](/so/ida/每天一个IDA小技巧（二）基本代码转换--水印.pdf)
+  * [全局、栈和堆分配的数组和结构体](/so/ida/每天一个IDA小技巧（三）全局、栈和堆分配的数组和结构体.pdf)
 
 # 目录
 * [工具环境](/base/tools-and-environment.md)
@@ -53,6 +54,10 @@
 作者微信：hx58929
 
 作者故事星球：
+
+交个朋友：https://t.zsxq.com/BiEaMVJ
+
+![一起来讨论交流学习吧，逆向人！](/assets/coupon.png)
 
 ![一起来讨论交流学习吧，逆向人！](/assets/677.jpeg)
 
