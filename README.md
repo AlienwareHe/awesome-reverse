@@ -49,6 +49,9 @@
     * [IDA Pro常用分析手法-待续]()
     * [面试必问系列：安卓系统开机流程](/android/android-system-start.md)
 
+# 安卓/JS逆向视频教程
+http://course.alienhe.cn/home.html
+
 # 交流
 作者微信：hx58929
 
@@ -62,9 +65,6 @@
 
 ![wx](/assets/wx.jpeg)
 ![zfb](/assets/zfb.jpeg)
-
-# 视频教程
-http://course.alienhe.cn/home.html
 
 # 致谢
 感谢所学到的所有逆向前辈！
