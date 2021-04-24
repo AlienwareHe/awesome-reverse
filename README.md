@@ -6,9 +6,9 @@
 本项目将会随着我的学习和进步一直更新～
 
 # 近日更新
-* 每日一个IDA小知识系列
-  * [IDA符号和栈帧](/so/ida/每天一个IDA小技巧（一）序言--水印.pdf)
-  * [代码和数据字节的基本转换](/so/ida/每天一个IDA小技巧（二）基本代码转换--水印.pdf)
+* [每日一个IDA小知识系列](/so/ida)
+* [Magisk源码学习-自定义Sepolicy加载过程]()
+* [Shizuku-获取ADB/ROOT权限的中间人Binder原理解析]()
 
 # 目录
 * [工具环境](/base/tools-and-environment.md)
@@ -54,12 +54,17 @@
 
 作者故事星球：
 
+交个朋友：https://t.zsxq.com/BiEaMVJ
+
 ![一起来讨论交流学习吧，逆向人！](/assets/677.jpeg)
 
 如果你觉得对你有帮助，或者你开心的话，可以请作者喝一杯咖啡：
 
 ![wx](/assets/wx.jpeg)
 ![zfb](/assets/zfb.jpeg)
+
+# 视频教程
+http://course.alienhe.cn/home.html
 
 # 致谢
 感谢所学到的所有逆向前辈！
