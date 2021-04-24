@@ -52,4 +52,5 @@ Android WebView在Android平台上是一个特殊的View， 基于webkit引擎�
 # WebView远程调试
 1. 在应用中开启WebView远程调试：setWebContentsDebuggingEnabled
 2. 设备USB连接电脑，打开chrome，输入chrome://inspect
-3. 在Devices中可以看到对应的设备的WebView
+3. 取消Discover network targets
+4. 在Devices中可以看到对应的设备的WebView
