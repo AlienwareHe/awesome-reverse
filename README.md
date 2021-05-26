@@ -7,8 +7,8 @@
 
 # 近日更新
 * [每日一个IDA小知识系列](/so/ida)
-* [Magisk源码学习-自定义Sepolicy加载过程]()
-* [Shizuku-获取ADB/ROOT权限的中间人Binder原理解析]()
+* [Magisk源码学习-自定义Sepolicy加载过程](/android/magisk-sepolicy.pdf)
+* [Shizuku-获取ADB/ROOT权限的中间人Binder原理解析](/android/shizuku.pdf)
 
 # 目录
 * [工具环境](/base/tools-and-environment.md)
