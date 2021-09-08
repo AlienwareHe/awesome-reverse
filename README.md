@@ -53,7 +53,10 @@
 http://course.alienhe.cn/home.html
 
 # 交流
-作者微信：hx58929
+作者微信：hx58929 备注awesome进群一起探讨交流
+
+群聊二维码：
+![逆向人！冲！](http://oss.alienhe.cn/20210908104552.png)
 
 作者故事星球：
 
