@@ -48,6 +48,7 @@
     * [riru原理浅析及Edxp入口分析](/android/riru-edxp.md)
     * [IDA Pro常用分析手法-待续]()
     * [面试必问系列：安卓系统开机流程](/android/android-system-start.md)
+    * [从JNI函数静动态注册思考如何实现Xposed的NativeHook](/android/jni-function-bind.md)
 
 # 安卓/JS逆向视频教程
 http://course.alienhe.cn/home.html
@@ -56,7 +57,7 @@ http://course.alienhe.cn/home.html
 作者微信：hx58929 备注awesome进群一起探讨交流
 
 群聊二维码：
-![逆向人冲~](/assets/20210908104552.png)
+![逆向人冲~](/assets/wechat-group.jpeg)
 
 作者故事星球：
 
