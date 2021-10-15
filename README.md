@@ -9,6 +9,8 @@
 * [每日一个IDA小知识系列](/so/ida)
 * [Magisk源码学习-自定义Sepolicy加载过程](/android/magisk-sepolicy.pdf)
 * [Shizuku-获取ADB/ROOT权限的中间人Binder原理解析](/android/shizuku.pdf)
+* [从JNI函数静动态注册思考如何实现Xposed的NativeHook](/android/jni-function-bind.md)
+* [平头哥Ratel](/android/ratel-doc.md)
 
 # 目录
 * [工具环境](/base/tools-and-environment.md)
@@ -49,6 +51,9 @@
     * [IDA Pro常用分析手法-待续]()
     * [面试必问系列：安卓系统开机流程](/android/android-system-start.md)
     * [从JNI函数静动态注册思考如何实现Xposed的NativeHook](/android/jni-function-bind.md)
+
+* [平头哥Ratel](/android/ratel-doc.md)
+  * [平头哥插件开发](/android/ratel-plugin-dev.md)
 
 # 安卓/JS逆向视频教程
 http://course.alienhe.cn/home.html
