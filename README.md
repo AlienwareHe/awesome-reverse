@@ -11,6 +11,7 @@
 * [Shizuku-获取ADB/ROOT权限的中间人Binder原理解析](/android/shizuku.pdf)
 * [从JNI函数静动态注册思考如何实现Xposed的NativeHook](/android/jni-function-bind.md)
 * [平头哥Ratel](/android/ratel-doc.md)
+* [SandHook之SandSingleInstHook(异常Hook)原理浅析](https://mp.weixin.qq.com/s/TfqMI07uRtzUbBIuTFXRyQ)
 
 # 目录
 * [工具环境](/base/tools-and-environment.md)
@@ -57,6 +58,13 @@
 
 # 安卓/JS逆向视频教程
 http://course.alienhe.cn/home.html
+
+# 微信公众号
+欢迎关注公众号获取更多最新文章内容推送：[夏日技术友人帐](https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg3NTcyODYxMQ==&scene=124#wechat_redirect)
+
+scan to follow:
+
+![image](https://user-images.githubusercontent.com/27995531/149053561-35ae479a-50b5-45e2-a1d7-c40c535b2e52.png)
 
 # 交流
 作者微信：hx58929 备注awesome进群一起探讨交流
