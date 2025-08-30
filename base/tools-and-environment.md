@@ -28,7 +28,7 @@
 ### Hook工具
 APP逆向中离不开的核心思想：hook，可以实现代码动态插桩，修改对方APP中的方法执行逻辑，这里列举几种可以开箱即用的Hook工具。
 
-Hook框架|是否需要root环境｜特点
+Hook框架|是否需要root环境|特点
 ---|---|---|---
 Xposed｜是 | 最经典的Hook框架
 EdXposed｜Magisk+riru | Xposed安卓8之后不再维护，因此目前8+一般使用EdXposed
