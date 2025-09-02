@@ -66,7 +66,7 @@ goto :goto_0            # catch 块结束
 可以看到smali代码不仅可以准确描述字节码指令，还十分方便阅读。
 
 
-更多细节可自行学习或参考[文章](https://ctf-wiki.github.io/ctf-wiki/android/basic_operating_mechanism/java_layer/smali/smali-zh/)
+更多细节可自行学习或参考[文章](https://ctf-wiki.github.io/ctf-wiki/android/basic_operating_mechanism/java_layer/smali/smali/)
 
 逆向smali的文件一个作用在于辅助代码逻辑审计，其次还可以通过将对方代码反编译回smali然后进行修改，例如if-else逻辑更改或者插入代码等，再编译回dex替换并重打包来实现对方APK的修改。
 
