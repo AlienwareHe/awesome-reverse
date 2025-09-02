@@ -28,14 +28,14 @@
 ### Hook工具
 APP逆向中离不开的核心思想：hook，可以实现代码动态插桩，修改对方APP中的方法执行逻辑，这里列举几种可以开箱即用的Hook工具。
 
-Hook框架|是否需要root环境｜特点
----|---|---|---
-Xposed｜是 | 最经典的Hook框架
-EdXposed｜Magisk+riru | Xposed安卓8之后不再维护，因此目前8+一般使用EdXposed
-VAXposed｜否 | 通过VirtualApp实现免root
-Frida｜免root情况下也可集成frida-gadget.so | 比Xposed更强大的支持Native Hook和Js、Python等语言编写脚本的分析工具
-太极｜否 | 基于重打包实现的一个类Xposed框架
-[Ratel](https://ratel.virjar.com/)｜否 | 比太极更加强大的支持应用分身和设备指纹的hook框架
+|Hook框架|是否需要root环境|特点|
+|---|---|---|
+Xposed|是 | 最经典的Hook框架
+EdXposed|Magisk+riru | Xposed安卓8之后不再维护，因此目前8+一般使用EdXposed
+VAXposed|否 | 通过VirtualApp实现免root
+Frida|免root情况下也可集成frida-gadget.so | 比Xposed更强大的支持Native Hook和Js、Python等语言编写脚本的分析工具
+太极|否 | 基于重打包实现的一个类Xposed框架
+[Ratel](https://ratel.virjar.com/)|否 | 比太极更加强大的支持应用分身和设备指纹的hook框架
 QContainer| 否 | 自研对标Ratel的Hook框架
 
 ### JADX使用技巧
